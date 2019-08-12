@@ -47,15 +47,15 @@ version = "0.1.1"
 
 [[CSTParser]]
 deps = ["Tokenize"]
-git-tree-sha1 = "0ff80f68f55fcde2ed98d7b24d7abaf20727f3f8"
+git-tree-sha1 = "c69698c3d4a7255bc1b4bc2afc09f59db910243b"
 uuid = "00ebfdb7-1f24-5e51-bd34-a7502290713f"
-version = "0.6.1"
+version = "0.6.2"
 
 [[CodecZlib]]
-deps = ["BinaryProvider", "Libdl", "Test", "TranscodingStreams"]
-git-tree-sha1 = "36bbf5374c661054d41410dc53ff752972583b9b"
+deps = ["BinaryProvider", "Libdl", "TranscodingStreams"]
+git-tree-sha1 = "05916673a2627dd91b4969ff8ba6941bc85a960e"
 uuid = "944b1d66-785c-5afd-91f1-9de20f533193"
-version = "0.5.2"
+version = "0.6.0"
 
 [[ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -88,9 +88,9 @@ uuid = "a8cc5b0e-0ffa-5ad4-8c14-923d3ee1735f"
 version = "4.0.0"
 
 [[DataAPI]]
-git-tree-sha1 = "891a09f4f90361a28d0391c104a65c0202e22624"
+git-tree-sha1 = "8903f0219d3472543fc4b2f5ebaf675a07f817c0"
 uuid = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"
-version = "1.0.0"
+version = "1.0.1"
 
 [[DataDeps]]
 deps = ["HTTP", "Reexport", "SHA"]
@@ -181,9 +181,9 @@ version = "0.21.0"
 
 [[Juno]]
 deps = ["Base64", "Logging", "Media", "Profile", "Test"]
-git-tree-sha1 = "4e4a8d43aa7ecec66cadaf311fbd1e5c9d7b9175"
+git-tree-sha1 = "8426e073b1676acba2aea7a4a81d7a3af97a14fe"
 uuid = "e5e0dc1b-0480-54bc-9374-aad01c23163d"
-version = "0.7.0"
+version = "0.7.1"
 
 [[LibGit2]]
 uuid = "76f85450-5226-5b5a-8eaa-529ad045b433"

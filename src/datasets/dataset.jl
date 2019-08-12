@@ -54,21 +54,33 @@ function batched(xs)
 end
 
 function get_batch(c::Channel, n=1)
-    res = Vector(undef, n)
-    for (i, x) ∈ enumerate(c)
-        res[i] = x
-        i >= n && break
+  res = []
+  sizehint!(res, n)
+  for i = 1:n
+    v = @try_take! c if isempty(res)
+      return nothing
+    else
+      break
     end
-    isassigned(res, n) ? batched(res) : nothing
+    push!(res, v)
+  end
+  res
 end
 
 function get_batch(cs::Container{C}, n=1) where C <: Channel
-    res = Vector(undef, n)
-    for (i, xs) ∈ enumerate(zip(cs...))
-        res[i] = xs
-        i >= n && break
+  res = []
+  sizehint!(res, n)
+  for i = 1:n
+    v = @try_call! map(cs) do c
+      take!(c)
+    end if isempty(res)
+      return nothing
+    else
+      break
     end
-    isassigned(res, n) ? batched(res) : nothing
+    push!(res, v)
+  end
+  batched(res)
 end
 
 get_vocab(::D, args...; kwargs...) where D <: Dataset = (println("No prebuild vocab"); nothing)

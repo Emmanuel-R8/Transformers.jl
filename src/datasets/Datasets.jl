@@ -10,9 +10,11 @@ using ..Transformers: Container
 export Dataset, Train, Dev, Test
 export dataset, datafile, get_batch, get_vocab, get_labels, batched
 
-
+include("utils.jl")
 include("download_utils.jl")
-include("./dataset.jl")
+include("dataset.jl")
+
+include("distributed.jl")
 
 include("translate/wmt.jl")
 using .WMT
